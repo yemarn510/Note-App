@@ -1,0 +1,23 @@
+<h2>My Notes</h2>
+<form class="myNotes">
+    <ul *ngFor="let note of noteList">
+        <tr>
+            <td style="font-size: 20px;">
+                {{note.id}}.
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <input matInput value="{{note.noteTitle}}" readonly="true">
+                </mat-form-field>
+            </td>
+            <td>    
+                <div *ngIf="note.status === 0">
+                    <button class="button" mat-raised-button (click)="done(note.id - 1)">Pending</button>
+                </div>
+                <div *ngIf="note.status === 1">
+                    <button class="button" mat-raised-button disabled="disabled" style="color: green;">Done</button>
+                </div>
+            </td>
+        </tr>
+      </ul>
+</form>

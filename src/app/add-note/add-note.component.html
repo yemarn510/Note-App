@@ -1,0 +1,11 @@
+<h2>Add New Note</h2>
+<form class="example-form">
+    <tr> 
+        <td>
+            <mat-form-field>
+                <input matInput type="text" #noteTitle>
+            </mat-form-field>
+            <button mat-fab color="primary" (click)="addNote(noteTitle.value); noteTitle.value=''"><mat-icon>add_circle_outline</mat-icon></button>
+        </td>   
+    </tr>
+</form>
